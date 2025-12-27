@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 PASSEPORT POUR L'EXCELLENCE - Guide Visa d'Études 2025</title>
+    <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================
+           MARKETING BANNER
+        ======================================== */
+        .marketing-banner {
+            background: linear-gradient(90deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+            padding: 18px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .marketing-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .marketing-banner h1 {
+            color: white;
+            font-size: 1.8em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .marketing-banner .highlight {
+            color: #1a1a2e;
+            background: white;
+            padding: 2px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        /* ========================================
+           SECTION 1: SINGLE PRODUCT PAGE
+        ======================================== */
+        .product-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 60px 20px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* IMAGE SLIDER */
+        .slider-container {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            height: fit-content;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #f7931e;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(247, 147, 30, 0.9);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.4em;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            background: #ff6b35;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-arrow.prev {
+            left: 10px;
+        }
+
+        .slider-arrow.next {
+            right: 10px;
+        }
+
+        /* PRODUCT INFO - OPTIMIZED */
+        .product-info {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff3b3b, #ff6b35);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            animation: pulse 2s ease-in-out infinite;
+            width: fit-content;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .product-title {
+            font-size: 2.5em;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-description {
+            font-size: 1.05em;
+            color: #b0c4de;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .price-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #f7931e;
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .old-price {
+            font-size: 1.5em;
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .new-price {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #f7931e;
+        }
+
+        .discount-badge {
+            background: #ff3b3b;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95em;
+        }
+
+        .deliverables {
+            margin-bottom: 20px;
+        }
+
+        .deliverables h3 {
+            color: #f7931e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
+
+        .deliverable-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .deliverable-item .icon {
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+            color: white;
+            padding: 20px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(247, 147, 30, 0.4);
+            margin-bottom: 15px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(247, 147, 30, 0.6);
+        }
+
+        .cta-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .security-badge {
+            text-align: center;
+            color: #b0c4de;
+            font-size: 0.9em;
+        }
+
+        /* ========================================
+           SECTION 2: COUNTRIES CARDS
+        ======================================== */
+        .countries-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            font-weight: 900;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .country-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+        }
+
+        .country-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(247, 147, 30, 0.3);
+            border-color: #f7931e;
+        }
+
+        .country-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .country-content {
+            padding: 25px;
+        }
+
+        .country-name {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .country-flag {
+            font-size: 1.5em;
+        }
+
+        .procedures-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .procedure-tag {
+            background: linear-gradient(135deg, rgba(247, 147, 30, 0.1), rgba(255, 107, 53, 0.1));
+            color: #f7931e;
+            border: 2px solid #f7931e;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .procedure-tag:hover {
+            background: linear-gradient(135deg, #f7931e, #ff6b35);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(247, 147, 30, 0.3);
+        }
+
+        /* ========================================
+           SECTION 3: CTA + FAQ
+        ======================================== */
+        .final-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 80px 20px;
+        }
+
+        .final-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        /* CTA SIDE */
+        .cta-side {
+            background: rgba(247, 147, 30, 0.1);
+            border: 3px solid #f7931e;
+            border-radius: 25px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .cta-side h2 {
+            color: #f7931e;
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .cta-side p {
+            color: #b0c4de;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .cta-features {
+            text-align: left;
+            margin-bottom: 35px;
+        }
+
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .cta-feature .icon {
+            font-size: 1.5em;
+            color: #f7931e;
+        }
+
+        /* FAQ SIDE */
+        .faq-side {
+            color: white;
+        }
+
+        .faq-side h2 {
+            color: #f7931e;
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 35px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(247, 147, 30, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #f7931e;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 700;
+            color: #f7931e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #b0c4de;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+            color: #f7931e;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* ========================================
+           SUCCESS POPUP
+        ======================================== */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 25px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-popup:hover {
+            background: #ff3b3b;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .popup-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 1s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .popup-content h2 {
+            color: #1a1a2e;
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .payment-details {
+            background: #f5f5f5;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .payment-details h3 {
+            color: #1a1a2e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .payment-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .payment-detail:last-child {
+            border-bottom: none;
+        }
+
+        .payment-detail .label {
+            color: #666;
+            font-weight: 600;
+        }
+
+        .payment-detail .value {
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+
+        .screenshot-notice {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 4px solid #f7931e;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .screenshot-notice strong {
+            color: #f7931e;
+            font-size: 1.1em;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: #25D366;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            background: #1fbd59;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.5em;
+        }
+
+        /* ERROR POPUP */
+        .popup-content.error .popup-icon {
+            color: #ff3b3b;
+        }
+
+        .popup-content.error h2 {
+            color: #ff3b3b;
+        }
+
+        .retry-button {
+            background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(247, 147, 30, 0.4);
+        }
+
+        .retry-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(247, 147, 30, 0.6);
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            background: #0a0a0a;
+            padding: 30px 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+        @media (max-width: 1024px) {
+            .product-container,
+            .final-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .product-title {
+                font-size: 2em;
+            }
+
+            .countries-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .marketing-banner h1 {
+                font-size: 1.3em;
+            }
+
+            .product-title {
+                font-size: 1.8em;
+            }
+
+            .new-price {
+                font-size: 2em;
+            }
+
+            .cta-button {
+                font-size: 1.1em;
+                padding: 18px 30px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-side,
+            .popup-content {
+                padding: 30px;
+            }
+
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         MARKETING BANNER
+    ======================================== -->
+    <div class="marketing-banner">
+        <h1>
+            🔥 OFFRE EXPLOSIVE : <span class="highlight">-40%</span> 
+            POUR LES <span class="highlight">47 PREMIERS</span> ACHETEURS ! 🚀
+        </h1>
+    </div>
+
+    <!-- ========================================
+         SECTION 1: SINGLE PRODUCT PAGE
+    ======================================== -->
+    <section class="product-section">
+        <div class="product-container">
+            <!-- IMAGE SLIDER -->
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <button class="slider-arrow prev" onclick="changeSlide(-1)" aria-label="Image précédente">‹</button>
+                    <button class="slider-arrow next" onclick="changeSlide(1)" aria-label="Image suivante">›</button>
+                    
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=1000&fit=crop" alt="Couverture E-book" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 1000\'%3E%3Cdefs%3E%3ClinearGradient id=\'bg\' x1=\'0%25\' y1=\'0%25\' x2=\'0%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%231a1a2e\'/%3E%3Cstop offset=\'100%25\' style=\'stop-color:%2316213e\'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=\'url(%23bg)\' width=\'800\' height=\'1000\'/%3E%3Ctext x=\'400\' y=\'300\' font-size=\'60\' fill=\'%23f7931e\' text-anchor=\'middle\' font-weight=\'900\'%3EPASSEPORT%3C/text%3E%3Ctext x=\'400\' y=\'370\' font-size=\'40\' fill=\'white\' text-anchor=\'middle\'%3EPOUR%3C/text%3E%3Ctext x=\'400\' y=\'440\' font-size=\'60\' fill=\'%23f7931e\' text-anchor=\'middle\' font-weight=\'900\'%3EL\'EXCELLENCE%3C/text%3E%3Ctext x=\'400\' y=\'700\' font-size=\'30\' fill=\'white\' text-anchor=\'middle\'%3EGuide Complet%3C/text%3E%3Ctext x=\'400\' y=\'750\' font-size=\'30\' fill=\'white\' text-anchor=\'middle\'%3EVisa d\'Études 2025%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&h=1000&fit=crop" alt="Contenu du guide" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 1000\'%3E%3Crect fill=\'%23f5f5f5\' width=\'800\' height=\'1000\'/%3E%3Ctext x=\'400\' y=\'500\' font-size=\'50\' fill=\'%231a1a2e\' text-anchor=\'middle\' font-weight=\'700\'%3E14 Pays Couverts%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=1000&fit=crop" alt="Procédures détaillées" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 1000\'%3E%3Crect fill=\'%23f5f5f5\' width=\'800\' height=\'1000\'/%3E%3Ctext x=\'400\' y=\'500\' font-size=\'50\' fill=\'%231a1a2e\' text-anchor=\'middle\' font-weight=\'700\'%3EProcédures Complètes%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=1000&fit=crop" alt="Checklists incluses" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 1000\'%3E%3Crect fill=\'%23f5f5f5\' width=\'800\' height=\'1000\'/%3E%3Ctext x=\'400\' y=\'500\' font-size=\'50\' fill=\'%231a1a2e\' text-anchor=\'middle\' font-weight=\'700\'%3EChecklists + Bonus%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav" id="sliderNav"></div>
+            </div>
+
+            <!-- PRODUCT INFO - OPTIMIZED -->
+            <div class="product-info">
+                <div class="promo-badge">🔥 OFFRE LIMITÉE : -40% AUJOURD'HUI</div>
+                
+                <h1 class="product-title">
+                    PASSEPORT POUR L'EXCELLENCE
+                </h1>
+                
+                <p class="product-description">
+                    Le guide complet de l'étudiant africain pour obtenir son visa d'études en 2025. 
+                    Procédures détaillées, checklists et astuces exclusives.
+                </p>
+
+                <div class="price-box">
+                    <div class="price-row">
+                        <span class="old-price">25 000 FCFA</span>
+                        <span class="new-price">15 000 FCFA</span>
+                    </div>
+                    <div class="discount-badge">ÉCONOMISEZ 10 000 FCFA</div>
+                </div>
+
+                <div class="deliverables">
+                    <h3>📦 Inclus dans votre achat :</h3>
+                    <div class="deliverable-item">
+                        <span class="icon">📚</span>
+                        <span>Guide PDF complet (150+ pages)</span>
+                    </div>
+                    <div class="deliverable-item">
+                        <span class="icon">🌍</span>
+                        <span>14 pays + Bonus Sénégal</span>
+                    </div>
+                    <div class="deliverable-item">
+                        <span class="icon">✅</span>
+                        <span>Checklists pour chaque destination</span>
+                    </div>
+                    <div class="deliverable-item">
+                        <span class="icon">🔗</span>
+                        <span>Liens officiels 2025 vérifiés</span>
+                    </div>
+                </div>
+
+                <button class="cta-button" onclick="initiatePayment()" id="payButton">
+                    🔒 ACHETER MAINTENANT
+                </button>
+
+                <div class="security-badge">
+                    ✅ Paiement 100% Sécurisé avec FedaPay
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 2: COUNTRIES CARDS
+    ======================================== -->
+    <section class="countries-section">
+        <div class="container">
+            <h2 class="section-title">🌍 14 PAYS COUVERTS DANS LE GUIDE</h2>
+            <p class="section-subtitle">
+                Procédures complètes pour Études, Travail et Business
+            </p>
+
+            <div class="countries-grid">
+                <!-- France -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&h=400&fit=crop" alt="Paris, France" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇫🇷</span>
+                            France
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canada -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=600&h=400&fit=crop" alt="Toronto, Canada" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇨🇦</span>
+                            Canada
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chine -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&h=400&fit=crop" alt="Pékin, Chine" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇨🇳</span>
+                            Chine
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- États-Unis -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&h=400&fit=crop" alt="New York, USA" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇺🇸</span>
+                            États-Unis
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Royaume-Uni -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&h=400&fit=crop" alt="Londres, UK" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇬🇧</span>
+                            Royaume-Uni
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Japon -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&h=400&fit=crop" alt="Tokyo, Japon" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇯🇵</span>
+                            Japon
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corée du Sud -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=600&h=400&fit=crop" alt="Séoul, Corée du Sud" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇰🇷</span>
+                            Corée du Sud
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brésil -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=600&h=400&fit=crop" alt="Rio, Brésil" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇧🇷</span>
+                            Brésil
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxembourg -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=600&h=400&fit=crop" alt="Luxembourg" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇱🇺</span>
+                            Luxembourg
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Russie -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&h=400&fit=crop" alt="Moscou, Russie" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇷🇺</span>
+                            Russie
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allemagne -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&h=400&fit=crop" alt="Berlin, Allemagne" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇩🇪</span>
+                            Allemagne
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dubaï -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop" alt="Dubaï, EAU" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇦🇪</span>
+                            Dubaï
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Espagne -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&h=400&fit=crop" alt="Madrid, Espagne" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇪🇸</span>
+                            Espagne
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sénégal (Bonus) -->
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1580655653885-65763b2597d0?w=600&h=400&fit=crop" alt="Dakar, Sénégal" class="country-image">
+                    <div class="country-content">
+                        <div class="country-name">
+                            <span class="country-flag">🇸🇳</span>
+                            Sénégal <span style="color: #f7931e; font-size: 0.8em;">(BONUS)</span>
+                        </div>
+                        <div class="procedures-list">
+                            <span class="procedure-tag"><span>🎓</span> Études</span>
+                            <span class="procedure-tag"><span>💼</span> Travail</span>
+                            <span class="procedure-tag"><span>🏢</span> Business</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3: CTA + FAQ
+    ======================================== -->
+    <section class="final-section">
+        <div class="final-container">
+            <!-- CTA SIDE -->
+            <div class="cta-side">
+                <h2>🎓 PRÊT À RÉALISER VOTRE RÊVE ?</h2>
+                <p>
+                    Ne laissez pas passer cette opportunité unique de transformer votre avenir. 
+                    Des milliers d'étudiants ont déjà réussi grâce à ce guide.
+                </p>
+
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <span class="icon">✅</span>
+                        <span>Procédures complètes pour 14 pays</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="icon">💰</span>
+                        <span>Économisez plus de 100 000 FCFA</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="icon">⚡</span>
+                        <span>Accès immédiat après paiement</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="icon">🎁</span>
+                        <span>Bonus : Checklists + Modèles</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="icon">🔒</span>
+                        <span>Paiement 100% sécurisé</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="icon">🛡️</span>
+                        <span>Garantie 30 jours satisfait ou remboursé</span>
+                    </div>
+                </div>
+
+                <button class="cta-button" onclick="initiatePayment()">
+                    🚀 COMMANDER MAINTENANT
+                </button>
+            </div>
+
+            <!-- FAQ SIDE -->
+            <div class="faq-side">
+                <h2>❓ Questions Fréquentes</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Comment vais-je recevoir le guide ?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Après votre paiement réussi, vous recevrez les instructions pour réclamer votre guide via WhatsApp. Faites simplement un screenshot de la confirmation de paiement et contactez-nous au +229 68 96 09 83.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Le guide est-il à jour pour 2025 ?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Oui ! Le guide est régulièrement mis à jour avec les dernières procédures, liens officiels et exigences pour l'année académique 2025-2026.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Le paiement est-il sécurisé ?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolument ! Nous utilisons FedaPay, la plateforme de paiement la plus sécurisée en Afrique de l'Ouest. Vos informations sont cryptées et protégées.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Quels sont les pays couverts ?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Le guide couvre 14 destinations : France, Canada, Chine, États-Unis, Royaume-Uni, Japon, Corée du Sud, Brésil, Luxembourg, Russie, Allemagne, Dubaï, Espagne + BONUS Sénégal.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Y a-t-il une garantie ?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Oui ! Garantie satisfait ou remboursé de 30 jours. Si le guide ne répond pas à vos attentes, contactez-nous pour un remboursement complet.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Puis-je faire ma demande sans agence ?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolument ! C'est le but de ce guide. Nous vous donnons toutes les informations nécessaires pour faire votre demande vous-même et économiser des centaines de milliers de FCFA.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Passeport pour l'Excellence. Tous droits réservés.</p>
+            <p>Paiement sécurisé par FedaPay | Support WhatsApp: +229 68 96 09 83</p>
+        </div>
+    </footer>
+
+    <!-- SUCCESS POPUP -->
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-content">
+            <button class="close-popup" onclick="closePopup('successPopup')" aria-label="Fermer">×</button>
+            <div class="popup-icon">🎉</div>
+            <h2>PAIEMENT RÉUSSI !</h2>
+            <p>Félicitations ! Votre paiement a été confirmé avec succès.</p>
+
+            <div class="payment-details" id="paymentDetails">
+                <h3>📋 Détails du Paiement</h3>
+                <div class="payment-detail">
+                    <span class="label">Transaction ID:</span>
+                    <span class="value" id="transactionId">--</span>
+                </div>
+                <div class="payment-detail">
+                    <span class="label">Montant payé:</span>
+                    <span class="value">15 000 FCFA</span>
+                </div>
+                <div class="payment-detail">
+                    <span class="label">Date:</span>
+                    <span class="value" id="paymentDate">--</span>
+                </div>
+                <div class="payment-detail">
+                    <span class="label">Statut:</span>
+                    <span class="value" style="color: #25D366;">✅ Confirmé</span>
+                </div>
+            </div>
+
+            <div class="screenshot-notice">
+                <strong>📸 IMPORTANT :</strong><br>
+                Faites un screenshot de cette page ou de votre confirmation de paiement, 
+                puis cliquez sur le bouton ci-dessous pour réclamer votre guide immédiatement.
+            </div>
+
+            <a href="https://wa.me/22968960983?text=Bonjour%2C%20j%27ai%20effectué%20le%20paiement%20pour%20le%20guide%20%22Passeport%20pour%20l%27Excellence%22.%20Voici%20mon%20screenshot%20de%20confirmation.%20Merci%20!" 
+               class="whatsapp-button" 
+               target="_blank"
+               rel="noopener noreferrer">
+                <span class="whatsapp-icon">💬</span>
+                Demander Mon Guide
+            </a>
+        </div>
+    </div>
+
+    <!-- ERROR POPUP -->
+    <div class="popup-overlay" id="errorPopup">
+        <div class="popup-content error">
+            <button class="close-popup" onclick="closePopup('errorPopup')" aria-label="Fermer">×</button>
+            <div class="popup-icon">❌</div>
+            <h2>ERREUR DE PAIEMENT</h2>
+            <p id="errorMessage">Une erreur est survenue lors du traitement de votre paiement.</p>
+
+            <div class="screenshot-notice">
+                <strong>⚠️ Que faire ?</strong><br>
+                Veuillez réessayer ou contactez notre support WhatsApp si le problème persiste.
+            </div>
+
+            <button class="retry-button" onclick="closePopup('errorPopup'); initiatePayment();">
+                🔄 Réessayer
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // CONFIGURATION
+        // ========================================
+        const CONFIG = {
+            FEDAPAY_PUBLIC_KEY: 'pk_sandbox_votre_cle_publique', // REMPLACER PAR VOTRE CLÉ
+            AMOUNT: 15000,
+            CURRENCY: 'XOF',
+            WHATSAPP_NUMBER: '22968960983'
+        };
+
+        // ========================================
+        // IMAGE SLIDER
+        // ========================================
+        let currentSlide = 0;
+        const totalSlides = 4;
+
+        function initSlider() {
+            const navContainer = document.getElementById('sliderNav');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                dot.setAttribute('aria-label', `Aller à l'image ${i + 1}`);
+                navContainer.appendChild(dot);
+            }
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const track = document.getElementById('sliderTrack');
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            const dots = document.querySelectorAll('.slider-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto slide every 5 seconds
+        let autoSlideInterval = setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Pause auto-slide on user interaction
+        document.getElementById('sliderTrack')?.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        document.getElementById('sliderTrack')?.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(() => changeSlide(1), 5000);
+        });
+
+        // ========================================
+        // FAQ TOGGLE
+        // ========================================
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // ========================================
+        // POPUP MANAGEMENT
+        // ========================================
+        function showPopup(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Prevent closing popup by clicking outside
+        document.querySelectorAll('.popup-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                // Only close if clicking the close button (handled by closePopup function)
+                e.stopPropagation();
+            });
+            
+            // Prevent clicks on popup content from closing
+            overlay.querySelector('.popup-content')?.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        // ========================================
+        // FEDAPAY PAYMENT INTEGRATION
+        // ========================================
+        function initiatePayment() {
+            const payButton = document.getElementById('payButton');
+            if (!payButton) return;
+
+            const originalText = payButton.innerHTML;
+            payButton.disabled = true;
+            payButton.innerHTML = '<span class="spinner"></span> Redirection vers le paiement...';
+
+            try {
+                // Initialize FedaPay according to official documentation
+                FedaPay.init({
+                    public_key: CONFIG.FEDAPAY_PUBLIC_KEY,
+                    transaction: {
+                        amount: CONFIG.AMOUNT,
+                        description: 'Passeport pour l\'Excellence - Guide Visa Études 2025',
+                        callback_url: window.location.href,
+                        cancel_url: window.location.href
+                    },
+                    customer: {
+                        firstname: 'Client',
+                        lastname: 'Ebook',
+                        email: 'client@example.com',
+                        phone_number: {
+                            number: '+22900000000',
+                            country: 'bj'
+                        }
+                    },
+                    onComplete: function(transaction) {
+                        console.log('Transaction completed:', transaction);
+                        payButton.disabled = false;
+                        payButton.innerHTML = originalText;
+                        
+                        if (transaction.status === 'approved') {
+                            handlePaymentSuccess(transaction);
+                        } else {
+                            handlePaymentError('Le paiement n\'a pas été complété. Statut: ' + transaction.status);
+                        }
+                    },
+                    onError: function(error) {
+                        console.error('Payment error:', error);
+                        payButton.disabled = false;
+                        payButton.innerHTML = originalText;
+                        handlePaymentError(error.message || 'Une erreur est survenue lors du paiement.');
+                    }
+                });
+
+                // Open FedaPay checkout
+                FedaPay.open();
+                
+                // Re-enable button after opening
+                setTimeout(() => {
+                    payButton.disabled = false;
+                    payButton.innerHTML = originalText;
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Error initializing payment:', error);
+                payButton.disabled = false;
+                payButton.innerHTML = originalText;
+                handlePaymentError('Erreur lors de l\'initialisation du paiement. Veuillez réessayer.');
+            }
+        }
+
+        // ========================================
+        // PAYMENT SUCCESS HANDLER
+        // ========================================
+        function handlePaymentSuccess(transaction) {
+            // Update transaction details
+            document.getElementById('transactionId').textContent = transaction.id || 'N/A';
+            
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('fr-FR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            document.getElementById('paymentDate').textContent = dateStr;
+            
+            // Show success popup
+            showPopup('successPopup');
+            
+            // Track conversion (Google Analytics, Facebook Pixel, etc.)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase', {
+                    transaction_id: transaction.id,
+                    value: CONFIG.AMOUNT,
+                    currency: CONFIG.CURRENCY,
+                    items: [{
+                        item_name: 'Passeport pour l\'Excellence',
+                        price: CONFIG.AMOUNT,
+                        quantity: 1
+                    }]
+                });
+            }
+
+            // Facebook Pixel tracking
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Purchase', {
+                    value: CONFIG.AMOUNT,
+                    currency: CONFIG.CURRENCY
+                });
+            }
+        }
+
+        // ========================================
+        // PAYMENT ERROR HANDLER
+        // ========================================
+        function handlePaymentError(errorMessage) {
+            document.getElementById('errorMessage').textContent = errorMessage;
+            showPopup('errorPopup');
+        }
+
+        // ========================================
+        // SMOOTH SCROLL
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // KEYBOARD ACCESSIBILITY
+        // ========================================
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close any open popup
+                closePopup('successPopup');
+                closePopup('errorPopup');
+            }
+        });
+
+        // ========================================
+        // INIT ON PAGE LOAD
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            initSlider();
+            
+            // Check if returning from successful payment (callback URL)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('transaction_id')) {
+                const transactionId = urlParams.get('transaction_id');
+                const status = urlParams.get('status') || 'approved';
+                
+                if (status === 'approved') {
+                    handlePaymentSuccess({
+                        id: transactionId,
+                        status: status
+                    });
+                } else {
+                    handlePaymentError('Le paiement n\'a pas été approuvé. Statut: ' + status);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Complet - Voyage, Études, Travail & Business</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: "✈️";
+            font-size: 80px;
+            display: block;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header h2 {
+            font-size: 1.4em;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #0f3460;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0f3460;
+        }
+
+        .intro-text {
+            line-height: 1.9;
+            color: #444;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .intro-text strong {
+            color: #0f3460;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left: 5px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            page-break-inside: avoid;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
+        }
+
+        .warning-box::before {
+            content: "⚠️";
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #856404;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid #2196f3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            page-break-inside: avoid;
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+        }
+
+        .tips-box h3 {
+            color: #1565c0;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips-box h3::before {
+            content: "💡";
+            font-size: 24px;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-list li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            color: #0d47a1;
+            line-height: 1.7;
+        }
+
+        .tips-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2196f3;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #e9ecef;
+        }
+
+        .toc h3 {
+            color: #0f3460;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc h3::before {
+            content: "📘";
+            font-size: 28px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .toc-number {
+            background: #0f3460;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .toc-title {
+            color: #495057;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .toc-subtitle {
+            list-style: none;
+            padding-left: 45px;
+            margin-top: 8px;
+        }
+
+        .toc-subtitle li {
+            padding: 5px 0;
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+
+        .toc-subtitle li::before {
+            content: "▸";
+            margin-right: 8px;
+            color: #0f3460;
+        }
+
+        /* AVANT DE COMMENCER - STYLING */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8d9 100%);
+            border-left: 4px solid #FF6D1F;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            page-break-inside: avoid;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-box h3 {
+            color: #FF6D1F;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .key-point {
+            display: flex;
+            gap: 20px;
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .key-point:hover {
+            transform: translateX(5px);
+        }
+
+        .point-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e3ecff 100%);
+            border-radius: 50%;
+        }
+
+        .point-content {
+            flex: 1;
+        }
+
+        .point-content h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .point-content p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .doc-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+
+        .doc-list li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .doc-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .official-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+
+        .link-button::before {
+            content: "🔗";
+            font-size: 14px;
+        }
+
+        /* COUNTRY SECTIONS */
+        .country-section {
+            margin: 40px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            page-break-inside: avoid;
+        }
+
+        /* FRANCE - Bleu Blanc Rouge */
+        .france-header {
+            background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+        }
+
+        .country-flag {
+            font-size: 40px;
+        }
+
+        .country-name {
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .country-subtitle {
+            margin-left: auto;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .country-content {
+            background: white;
+            padding: 30px;
+        }
+
+        .steps-container {
+            margin: 20px 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: #f0f4ff;
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .france-badge {
+            background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+            box-shadow: 0 4px 10px rgba(0, 35, 149, 0.3);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h4 {
+            color: #002395;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .step-content p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .france-link {
+            background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+        }
+
+        .france-link:hover {
+            box-shadow: 0 5px 15px rgba(0, 35, 149, 0.4);
+        }
+
+        .money-saving-tip {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid;
+        }
+
+        .france-tip {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            border-left-color: #ED2939;
+        }
+
+        .money-saving-tip h4 {
+            color: #ED2939;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .money-saving-tip p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* CANADA - Rouge et Blanc */
+        .canada-header {
+            background: linear-gradient(135deg, #FF0000 0%, #DC143C 100%);
+        }
+
+        .canada-badge {
+            background: linear-gradient(135deg, #FF0000 0%, #DC143C 100%);
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .canada-link {
+            background: linear-gradient(135deg, #FF0000 0%, #DC143C 100%);
+        }
+
+        .canada-link:hover {
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .canada-tip {
+            background: linear-gradient(135deg, #fff0f0 0%, #ffe5e5 100%);
+            border-left-color: #FF0000;
+        }
+
+        .canada-tip h4 {
+            color: #FF0000;
+        }
+
+        .step-content h4.canada-title {
+            color: #FF0000;
+        }
+
+        /* USA - Bleu Marine et Rouge */
+        .usa-header {
+            background: linear-gradient(135deg, #002868 0%, #BF0A30 100%);
+        }
+
+        .usa-badge {
+            background: linear-gradient(135deg, #002868 0%, #BF0A30 100%);
+            box-shadow: 0 4px 10px rgba(0, 40, 104, 0.3);
+        }
+
+        .usa-link {
+            background: linear-gradient(135deg, #002868 0%, #BF0A30 100%);
+        }
+
+        .usa-link:hover {
+            box-shadow: 0 5px 15px rgba(0, 40, 104, 0.4);
+        }
+
+        .usa-tip {
+            background: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+            border-left-color: #002868;
+        }
+
+        .usa-tip h4 {
+            color: #002868;
+        }
+
+        .step-content h4.usa-title {
+            color: #002868;
+        }
+
+        /* UK - Bleu Royal */
+        .uk-header {
+            background: linear-gradient(135deg, #012169 0%, #C8102E 100%);
+        }
+
+        .uk-badge {
+            background: linear-gradient(135deg, #012169 0%, #C8102E 100%);
+            box-shadow: 0 4px 10px rgba(1, 33, 105, 0.3);
+        }
+
+        .uk-link {
+            background: linear-gradient(135deg, #012169 0%, #C8102E 100%);
+        }
+
+        .uk-link:hover {
+            box-shadow: 0 5px 15px rgba(1, 33, 105, 0.4);
+        }
+
+        .uk-tip {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+            border-left-color: #012169;
+        }
+
+        .uk-tip h4 {
+            color: #012169;
+        }
+
+        .step-content h4.uk-title {
+            color: #012169;
+        }
+
+        /* GERMANY - Noir Rouge Or */
+        .germany-header {
+            background: linear-gradient(135deg, #000000 0%, #DD0000 50%, #FFCC00 100%);
+        }
+
+        .germany-badge {
+            background: linear-gradient(135deg, #000000 0%, #DD0000 100%);
+            box-shadow: 0 4px 10px rgba(221, 0, 0, 0.3);
+        }
+
+        .germany-link {
+            background: linear-gradient(135deg, #000000 0%, #DD0000 100%);
+        }
+
+        .germany-link:hover {
+            box-shadow: 0 5px 15px rgba(221, 0, 0, 0.4);
+        }
+
+        .germany-tip {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffefcc 100%);
+            border-left-color: #FFCC00;
+        }
+
+        .germany-tip h4 {
+            color: #DD0000;
+        }
+
+        .step-content h4.germany-title {
+            color: #DD0000;
+        }
+
+        /* UAE - Vert Rouge Noir Or */
+        .uae-header {
+            background: linear-gradient(135deg, #00732F 0%, #FF0000 50%, #000000 100%);
+        }
+
+        .uae-badge {
+            background: linear-gradient(135deg, #00732F 0%, #FF0000 100%);
+            box-shadow: 0 4px 10px rgba(0, 115, 47, 0.3);
+        }
+
+        .uae-link {
+            background: linear-gradient(135deg, #00732F 0%, #FF0000 100%);
+        }
+
+        .uae-link:hover {
+            box-shadow: 0 5px 15px rgba(0, 115, 47, 0.4);
+        }
+
+        .uae-tip {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6ffe6 100%);
+            border-left-color: #00732F;
+        }
+
+        .uae-tip h4 {
+            color: #00732F;
+        }
+
+        .step-content h4.uae-title {
+            color: #00732F;
+        }
+
+        .footer {
+            background: #f9f9f9;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            border-top: 3px solid #0f3460;
+        }
+
+        .footer strong {
+            color: #0f3460;
+            font-size: 1.2em;
+        }
+
+        .pdf-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(15, 52, 96, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .pdf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(15, 52, 96, 0.5);
+        }
+
+        .pdf-button::before {
+            content: "📄";
+            font-size: 20px;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0f3460;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .pdf-button,
+            .loading-overlay {
+                display: none !important;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+
+            .section,
+            .warning-box,
+            .tips-box,
+            .toc {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .pdf-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 15px 25px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Génération du PDF en cours...</p>
+        </div>
+    </div>
+
+    <div class="container" id="content-to-pdf">
+        <div class="header">
+            <h1>Guide Complet</h1>
+            <h2>Voyager pour Études, Travail & Business</h2>
+        </div>
+
+        <div class="content">
+            <!-- INTRODUCTION -->
+            <div class="section">
+                <div class="section-title">🎯 Introduction</div>
+                <p class="intro-text">
+                    Voyager pour étudier, travailler ou lancer un business, c'est pas juste une envie… <strong>c'est un investissement</strong>. 
+                    Et quand on parle investissement, chaque franc économisé compte. La bonne nouvelle ? Les procédures officielles sont toujours 
+                    disponibles gratuitement sur les sites des gouvernements concernés. La mauvaise ? Trouver, comprendre et trier ces infos peut 
+                    devenir un vrai parcours du combattant.
+                </p>
+                <p class="intro-text">
+                    Ce guide a été conçu pour <strong>te faire gagner du temps et de l'argent</strong>. On a regroupé les étapes essentielles, 
+                    simplifié les termes techniques, classé les démarches par objectif, et rassemblé les points clés qui font souvent la différence 
+                    entre un dossier refusé… et un visa validé. Ici, pas de magie : juste de l'organisation, des sources fiables et des stratégies 
+                    optimisées pour réussir ton projet de voyage.
+                </p>
+            </div>
+
+            <!-- WARNING -->
+            <div class="warning-box">
+                <p>
+                    <strong>Les informations contenues dans ce document reflètent la situation de Décembre 2025.</strong> 
+                    Les procédures gouvernementales peuvent évoluer, donc vérifie toujours les liens officiels fournis pour rester à jour.
+                </p>
+            </div>
+
+            <!-- TIPS -->
+            <div class="tips-box">
+                <h3>Astuces Rapides</h3>
+                <ul class="tips-list">
+                    <li>Toujours comparer les frais sur le site officiel avant de payer quoi que ce soit</li>
+                    <li>Ne passe jamais par un intermédiaire sans vérifier son existence légale</li>
+                    <li>Prépare toutes tes preuves financières avant de commencer la procédure</li>
+                    <li>Une demande bien organisée vaut mieux qu'un dossier rempli à la dernière minute</li>
+                    <li>Garde des copies numériques et physiques de tout</li>
+                    <li>Chaque pays a ses propres exigences → lis toujours la checklist dédiée dans ce guide</li>
+                </ul>
+            </div>
+
+            <!-- AVANT DE COMMENCER -->
+            <div class="section">
+                <div class="section-title">🚀 Avant de Commencer — Points Clés</div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #f0f4ff 0%, #e3ecff 100%); border-left: 5px solid #4a90e2;">
+                    <h3 style="color: #2c5aa0; margin-bottom: 20px; font-size: 1.4em;">Les Bases Essentielles</h3>
+                    
+                    <div class="key-point">
+                        <div class="point-icon">🎯</div>
+                        <div class="point-content">
+                            <h4>Vérifie ton besoin de visa</h4>
+                            <p>Avant tout, assure-toi que tu as vraiment besoin d'un visa pour ton projet (court séjour vs long séjour ; étudiant vs travailleur). La plupart des sites officiels ont un assistant qui te dit quel visa est nécessaire.</p>
+                            <div class="official-links">
+                                <a href="https://france-visas.gouv.fr" target="_blank" class="link-button">🇫🇷 France-Visas</a>
+                                <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete.html" target="_blank" class="link-button">🇨🇦 Gouvernement du Canada</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <div class="point-icon">📋</div>
+                        <div class="point-content">
+                            <h4>Rassemble les documents de base</h4>
+                            <p>Avant toute prise de rendez-vous, prépare :</p>
+                            <ul class="doc-list">
+                                <li>Passeport valide (≥ 6 mois de validité)</li>
+                                <li>Lettre d'acceptation (pour étudiant)</li>
+                                <li>Contrat ou offre (pour travail)</li>
+                                <li>Preuves financières</li>
+                                <li>Assurances</li>
+                                <li>Photos aux normes</li>
+                                <li>Certificats de casier judiciaire si demandé</li>
+                            </ul>
+                            <div class="official-links">
+                                <a href="https://france-visas.gouv.fr" target="_blank" class="link-button">🇫🇷 France-Visas</a>
+                                <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete.html" target="_blank" class="link-button">🇨🇦 Gouvernement du Canada</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <div class="point-icon">💻</div>
+                        <div class="point-content">
+                            <h4>Privilégie les dépôts en ligne</h4>
+                            <p>Quand c'est possible, opte pour les procédures en ligne : gain de temps, trajets évités, moins d'intermédiaires. Beaucoup de services consulaires digitalisent les dossiers.</p>
+                            <div class="official-links">
+                                <a href="https://www.campusfrance.org" target="_blank" class="link-button">🎓 Campus France</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <div class="point-icon">📁</div>
+                        <div class="point-content">
+                            <h4>Organise tes fichiers</h4>
+                            <p>Fais des copies numériques et physiques, nomme clairement tes fichiers (ex : PASSPORT_nom.pdf, ACCEPTATION_univ.pdf). Un dossier complet accélère l'instruction.</p>
+                            <div class="official-links">
+                                <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete.html" target="_blank" class="link-button">🇨🇦 Gouvernement du Canada</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <div class="point-icon">⚠️</div>
+                        <div class="point-content">
+                            <h4>Méfie-toi des arnaques</h4>
+                            <p>Évite les intermédiaires qui vendent des rendez-vous ou promettent des "garanties". Toujours comparer au tarif officiel et vérifier l'existence de l'organisme facturant.</p>
+                            <div class="official-links">
+                                <a href="https://www.lemonde.fr" target="_blank" class="link-button">📰 Le Monde.fr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROCÉDURES PAR PAYS -->
+            <div class="section">
+                <div class="section-title">🌍 Procédure « Études » — Par Pays</div>
+            </div>
+
+            <!-- FRANCE -->
+            <div class="country-section france-section">
+                <div class="country-header france-header">
+                    <span class="country-flag">🇫🇷</span>
+                    <span class="country-name">FRANCE</span>
+                    <span class="country-subtitle">Étudiant Long Séjour</span>
+                </div>
+
+                <div class="country-content">
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number france-badge">1</div>
+                            <div class="step-content">
+                                <h4>Obtenir une lettre d'admission</h4>
+                                <p>Reçois une lettre d'admission de l'établissement (ou passe par la plateforme <strong>Études en France</strong> si nécessaire).</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number france-badge">2</div>
+                            <div class="step-content">
+                                <h4>Créer un compte France-Visas</h4>
+                                <p>Utilise l'assistant en ligne pour connaître la liste exacte de pièces à joindre selon ta situation.</p>
+                                <div class="official-links">
+                                    <a href="https://france-visas.gouv.fr" target="_blank" class="link-button france-link">🔗 France-Visas</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number france-badge">3</div>
+                            <div class="step-content">
+                                <h4>Rassembler les preuves financières</h4>
+                                <p>Prépare tes preuves de ressources (allocation, sponsor, attestation bancaire) et assurance santé/rapatriement.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number france-badge">4</div>
+                            <div class="step-content">
+                                <h4>Rendez-vous et dépôt</h4>
+                                <p>Prends rendez-vous au centre VFS / guichet consulaire de ton pays, dépose ton dossier + biométrie.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number france-badge">5</div>
+                            <div class="step-content">
+                                <h4>Validation à l'arrivée</h4>
+                                <p>Si VLS-TS (Visa Long Séjour valant Titre de Séjour), validation auprès de l'OFII selon ton cas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money-saving-tip france-tip">
+                        <h4>💰 Astuce Économie</h4>
+                        <p>Privilégie le dépôt numérique complet pour éviter multiples déplacements et frais d'intermédiaire. Tous les documents peuvent être scannés et envoyés en ligne.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CANADA -->
+            <div class="country-section canada-section">
+                <div class="country-header canada-header">
+                    <span class="country-flag">🇨🇦</span>
+                    <span class="country-name">CANADA</span>
+                    <span class="country-subtitle">Study Permit</span>
+                </div>
+
+                <div class="country-content">
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number canada-badge">1</div>
+                            <div class="step-content">
+                                <h4 class="canada-title">Recevoir la lettre d'acceptation</h4>
+                                <p>Obtiens une <strong>Letter of Acceptance</strong> d'un établissement désigné (DLI - Designated Learning Institution).</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number canada-badge">2</div>
+                            <div class="step-content">
+                                <h4 class="canada-title">Vérifier les exigences locales</h4>
+                                <p>Certains pays exigent des PAL/TAL pour certaines provinces. Vérifie les exigences spécifiques à ta situation.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number canada-badge">3</div>
+                            <div class="step-content">
+                                <h4 class="canada-title">Demande en ligne via IRCC</h4>
+                                <p>Remplis le formulaire, télécharge tes preuves financières et ton certificat d'acceptation.</p>
+                                <div class="official-links">
+                                    <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete.html" target="_blank" class="link-button canada-link">Gouvernement du Canada</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number canada-badge">4</div>
+                            <div class="step-content">
+                                <h4 class="canada-title">Biométrie et frais</h4>
+                                <p>Fournis ta biométrie si demandé et paie les frais applicables.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number canada-badge">5</div>
+                            <div class="step-content">
+                                <h4 class="canada-title">À l'arrivée</h4>
+                                <p>Présente ton permis/lettre d'introduction au contrôle frontalier.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money-saving-tip canada-tip">
+                        <h4>💰 Astuce Économie</h4>
+                        <p>Prépare ta preuve d'étude + preuve de fonds solides pour éviter les demandes de documents complémentaires (source de délais et de coûts supplémentaires).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USA -->
+            <div class="country-section usa-section">
+                <div class="country-header usa-header">
+                    <span class="country-flag">🇺🇸</span>
+                    <span class="country-name">ÉTATS-UNIS</span>
+                    <span class="country-subtitle">F-1 / M-1 Student Visa</span>
+                </div>
+
+                <div class="country-content">
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number usa-badge">1</div>
+                            <div class="step-content">
+                                <h4 class="usa-title">Acceptation et Form I-20</h4>
+                                <p>Sois accepté par une école SEVP-certifiée et obtiens le <strong>Form I-20</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number usa-badge">2</div>
+                            <div class="step-content">
+                                <h4 class="usa-title">Payer la taxe SEVIS</h4>
+                                <p>Règle la taxe SEVIS (I-901) obligatoire pour tous les étudiants.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number usa-badge">3</div>
+                            <div class="step-content">
+                                <h4 class="usa-title">DS-160 et rendez-vous</h4>
+                                <p>Remplis le DS-160 et prends rendez-vous pour l'entretien consulaire (document ID, I-20, preuves financières).</p>
+                                <div class="official-links">
+                                    <a href="https://travel.state.gov" target="_blank" class="link-button usa-link">US Department of State</a>
+                                    <a href="https://educationusa.state.gov" target="_blank" class="link-button usa-link">EducationUSA</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number usa-badge">4</div>
+                            <div class="step-content">
+                                <h4 class="usa-title">Entretien consulaire</h4>
+                                <p>Passe l'entretien au consulat + biométrie/photo. Obtention du visa si accepté.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money-saving-tip usa-tip">
+                        <h4>💰 Astuce Économie</h4>
+                        <p>Vérifie à l'avance la liste de documents du consulat local (certaines ambassades demandent des pièces supplémentaires). <strong>Note :</strong> Depuis 2025, le contrôle des réseaux sociaux est plus courant — garde tes profils propres.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UK -->
+            <div class="country-section uk-section">
+                <div class="country-header uk-header">
+                    <span class="country-flag">🇬🇧</span>
+                    <span class="country-name">ROYAUME-UNI</span>
+                    <span class="country-subtitle">Student Visa</span>
+                </div>
+
+                <div class="country-content">
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number uk-badge">1</div>
+                            <div class="step-content">
+                                <h4 class="uk-title">Obtenir le CAS</h4>
+                                <p>Reçois un <strong>CAS (Confirmation of Acceptance for Studies)</strong> du fournisseur de cours.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number uk-badge">2</div>
+                            <div class="step-content">
+                                <h4 class="uk-title">Préparer les documents</h4>
+                                <p>Passeport, CAS, preuves financières (fonds suffisants + frais de cours), preuves d'anglais si requis.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number uk-badge">3</div>
+                            <div class="step-content">
+                                <h4 class="uk-title">Postuler en ligne</h4>
+                                <p>Utilise GOV.UK pour la demande en ligne, fournis ta biométrie au VAC local.</p>
+                                <div class="official-links">
+                                    <a href="https://www.gov.uk/student-visa" target="_blank" class="link-button uk-link">GOV.UK - Student Visa</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number uk-badge">4</div>
+                            <div class="step-content">
+                                <h4 class="uk-title">Paiement et attente</h4>
+                                <p>Paie la healthcare surcharge et les frais de visa, puis attends la décision.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money-saving-tip uk-tip">
+                        <h4>💰 Astuce Économie</h4>
+                        <p>Calcule précisément la durée et les fonds demandés pour éviter des sur-dépenses inutiles en justificatifs bancaires.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GERMANY -->
+            <div class="country-section germany-section">
+                <div class="country-header germany-header">
+                    <span class="country-flag">🇩🇪</span>
+                    <span class="country-name">ALLEMAGNE</span>
+                    <span class="country-subtitle">Visa Étudiant</span>
+                </div>
+
+                <div class="country-content">
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number germany-badge">1</div>
+                            <div class="step-content">
+                                <h4 class="germany-title">Lettre d'admission</h4>
+                                <p>Sois accepté par une université allemande et obtiens ta lettre d'admission.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number germany-badge">2</div>
+                            <div class="step-content">
+                                <h4 class="germany-title">Compte bloqué (Sperrkonto)</h4>
+                                <p>Ouvre un compte bloqué (Sperrkonto) ou prouve tes ressources (bourse) selon l'exigence.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number germany-badge">3</div>
+                            <div class="step-content">
+                                <h4 class="germany-title">Demande de visa</h4>
+                                <p>Postule au visa étudiant auprès de l'ambassade/consulat via le portail consulaire (prendre rendez-vous).</p>
+                                <div class="official-links">
+                                    <a href="https://www.daad.de" target="_blank" class="link-button germany-link">DAAD</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number germany-badge">4</div>
+                            <div class="step-content">
+                                <h4 class="germany-title">Dépôt du dossier</h4>
+                                <p>Dépose ton dossier complet (lettre d'admission, preuve de moyens, couverture santé, logement).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money-saving-tip germany-tip">
+                        <h4>💰 Astuce Économie</h4>
+                        <p>Une bourse ou un accord Erasmus réduit énormément les preuves financières nécessaires.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UAE -->
+            <div class="country-section uae-section">
+                <div class="country-header uae-header">
+                    <span class="country-flag">🇦🇪</span>
+                    <span class="country-name">ÉMIRATS ARABES UNIS</span>
+                    <span class="country-subtitle">Études / Formation</span>
+                </div>
+
+                <div class="country-content">
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number uae-badge">1</div>
+                            <div class="step-content">
+                                <h4 class="uae-title">Vérifier le type de visa</h4>
+                                <p>Vérifie si la formation requiert un visa de long-séjour. Beaucoup de formations courtes acceptent un visa visiteur dédié.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number uae-badge">2</div>
+                            <div class="step-content">
+                                <h4 class="uae-title">Long séjour : admission + sponsor</h4>
+                                <p>Pour long séjour : admission + sponsor (école ou entreprise), dépôt via portails ICP/GDRFA selon émirat.</p>
+                                <div class="official-links">
+                                    <a href="https://icp.gov.ae" target="_blank" class="link-button uae-link">ICP - Dubai</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number uae-badge">3</div>
+                            <div class="step-content">
+                                <h4 class="uae-title">Paiement et pièces</h4>
+                                <p>Paie les frais et fournis les pièces (passeport, photos, preuves financières). Dépôt en ligne souvent possible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money-saving-tip uae-tip">
+                        <h4>💰 Astuce Économie</h4>
+                        <p>Pour formations courtes, privilégie le visa visiteur ou business (si admissible) pour éviter les frais de résidence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLE DES MATIÈRES -->
+            <div class="toc">
+                <h3>Plan du Document</h3>
+                <ul class="toc-list">
+                    <li class="toc-item">
+                        <span class="toc-number">1</span>
+                        <span class="toc-title">Avant de commencer</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Comprendre ton objectif (études, travail, business)</li>
+                        <li>Les erreurs courantes qui font perdre du temps et de l'argent</li>
+                        <li>Les documents de base à préparer dès maintenant</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">2</span>
+                        <span class="toc-title">Procédure Études</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Préparation académique</li>
+                        <li>Choix des écoles et reconnaissance officielle</li>
+                        <li>Préparation financière optimisée</li>
+                        <li>Documents incontournables</li>
+                        <li>Dépôt de la demande</li>
+                        <li>Préparation à l'entretien</li>
+                        <li>Astuces pour booster ses chances</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">3</span>
+                        <span class="toc-title">Procédure Travail</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Types d'offres reconnues</li>
+                        <li>CV & Lettre de motivation adaptés au pays visé</li>
+                        <li>Vérification des employeurs légitimes</li>
+                        <li>Documents obligatoires</li>
+                        <li>Délais habituels et pièges à éviter</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">4</span>
+                        <span class="toc-title">Procédure Business</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Types de visas business</li>
+                        <li>Preuves financières et documents professionnels</li>
+                        <li>Invitation, partenariats, événements officiels</li>
+                        <li>Dépôt du dossier & particularités</li>
+                        <li>Optimisation de ton budget business/travel</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">5</span>
+                        <span class="toc-title">Démarches annexes et obligatoires</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Assurance</li>
+                        <li>Réservation (avion, logement, etc.)</li>
+                        <li>Traductions certifiées</li>
+                        <li>Délais réalistes pour chaque étape</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">6</span>
+                        <span class="toc-title">Checklists</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Checklist Études</li>
+                        <li>Checklist Travail</li>
+                        <li>Checklist Business</li>
+                        <li>Checklist Pré-Départ</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">7</span>
+                        <span class="toc-title">Sources & Liens Officiels</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Liens classés selon l'objectif</li>
+                        <li>Notes importantes</li>
+                    </ul>
+
+                    <li class="toc-item">
+                        <span class="toc-number">8</span>
+                        <span class="toc-title">Bonus</span>
+                    </li>
+                    <ul class="toc-subtitle">
+                        <li>Conseils pour éviter les arnaques</li>
+                        <li>Budget moyen par procédure</li>
+                        <li>Modèles simples (emails, CV, lettres)</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Guide Voyage 2025</strong></p>
+            <p>Décembre 2025 - Version 1.0</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #0f3460;">
+                <strong>Optimisé pour Études, Travail & Business</strong>
+            </p>
+        </div>
+    </div>
+
+    <button class="pdf-button" id="pdfButton" onclick="generatePDF()">Télécharger PDF</button>
+
+    <script>
+        async function generatePDF() {
+            const button = document.getElementById('pdfButton');
+            const overlay = document.getElementById('loadingOverlay');
+            const element = document.getElementById('content-to-pdf');
+
+            button.disabled = true;
+            overlay.classList.add('active');
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    logging: false,
+                    backgroundColor: '#ffffff',
+                    imageTimeout: 0
+                });
+
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4',
+                    compress: true
+                });
+
+                const pdfWidth = 210;
+                const pdfHeight = 297;
+                const margin = 10;
+                const contentWidth = pdfWidth - (2 * margin);
+
+                const canvasAspectRatio = canvas.height / canvas.width;
+                const contentHeight = contentWidth * canvasAspectRatio;
+
+                const imgData = canvas.toDataURL('image/jpeg', 0.92);
+
+                let heightLeft = contentHeight;
+                let position = 0;
+
+                pdf.addImage(imgData, 'JPEG', margin, margin, contentWidth, contentHeight);
+                heightLeft -= (pdfHeight - 2 * margin);
+
+                while (heightLeft > 0) {
+                    position = heightLeft - contentHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'JPEG', margin, position + margin, contentWidth, contentHeight);
+                    heightLeft -= (pdfHeight - 2 * margin);
+                }
+
+                pdf.save('Guide_Voyage_Etudes_Travail_Business.pdf');
+
+                alert('✅ PDF généré avec succès !');
+
+            } catch (error) {
+                console.error('Erreur lors de la génération du PDF:', error);
+                alert('❌ Erreur lors de la génération du PDF:\n\n' + error.message);
+            } finally {
+                button.disabled = false;
+                overlay.classList.remove('active');
+            }
+        }
+    </script> 
+</body>
+</html>
